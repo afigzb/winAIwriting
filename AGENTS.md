@@ -1,5 +1,22 @@
 # AGENTS.md
 
+## winAIwriting local fork
+
+The human owner's product is a Windows/local-first novel-writing client without
+a deployed backend. Novel code lives in `apps/app/src/writing`; its independent
+`writing.html` entry reuses OpenWork controls and tokens without starting Den.
+`LOCAL_FEATURES` in the registry declares the explicit local entry, off for the
+upstream app. Do not wire this local entry into Den organization rollout, change
+Den contracts, or require MySQL/cloud credentials for local writing work.
+
+Run `pnpm writing:test`, `pnpm writing:typecheck`, and `pnpm writing:build` for
+this surface. Validate its browser UI headlessly; do not open an Electron window
+unless needed and authorized. Preserve the upstream license and history. New
+stages must keep confirmation in deterministic application code, persist all
+versions and source excerpts, and invalidate downstream approvals on edits.
+
+The following sections describe the preserved upstream OpenWork surfaces.
+
 OpenWork is a free, open-source desktop app (macOS, Windows, Linux) for doing
 work with AI agents on your own files — an open-source alternative to Claude
 Cowork and Codex, built on OpenCode, running any model from 50+ providers.

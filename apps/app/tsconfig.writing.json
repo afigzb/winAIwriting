@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "allowImportingTsExtensions": true },
+  "include": [
+    "src/writing/**/*.ts",
+    "src/writing/**/*.tsx",
+    "vite.writing.config.ts"
+  ],
+  "exclude": ["src/writing/**/*.test.ts"]
+}

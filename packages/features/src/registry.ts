@@ -52,6 +52,12 @@ function defineFeatures<const T extends Record<string, FeatureDefinition>>(featu
 
 const everywhere = ["cloud", "self_hosted"] as const
 
+// The independent winAIwriting entry opts into this local-only surface. It is
+// deliberately outside Den's registry: this fork does not deploy a control plane.
+export const LOCAL_FEATURES = {
+  novelWriting: { label: "小说工作台", default: false, entry: "writing.html" },
+}
+
 export const FEATURES = defineFeatures({
   serviceReadiness: {
     label: "Deployment service readiness",

@@ -1,4 +1,5 @@
 import { processBlankSlateProfile, resolveBlankSlateLaunch } from "./blank-slate-profile.mjs";
+import { registerWritingIpc } from "./writing-files.mjs";
 import { DESKTOP_POLICY_ENFORCEMENT_ENABLED } from "@openwork/types/den/desktop-policies-runtime";
 import { execFile, execFileSync, spawn } from "node:child_process";
 import { createServer } from "node:http";
@@ -2613,6 +2614,8 @@ async function createMainWindow() {
 
   return mainWindow;
 }
+
+registerWritingIpc({ ipcMain, dialog, getWindow: () => mainWindow });
 
 ipcMain.on("openwork:desktop-bootstrap-sync", (event) => {
   event.returnValue = workspaceStore.readDesktopBootstrapConfigSync();

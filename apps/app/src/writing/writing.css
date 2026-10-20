@@ -1,0 +1,488 @@
+.writing-shell {
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  min-height: 100dvh;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+.writing-sidebar {
+  background: var(--muted);
+  border-right: 1px solid var(--border);
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100dvh;
+  position: sticky;
+  top: 0;
+  overflow: auto;
+}
+.writing-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95rem;
+}
+.writing-project {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0 0.5rem;
+}
+.writing-project strong {
+  overflow-wrap: anywhere;
+}
+.writing-nav {
+  width: 100%;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+.writing-sidebar-heading {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted-foreground);
+  padding: 0 0.6rem;
+  font-size: 0.75rem;
+}
+.writing-chapters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  max-height: 35dvh;
+  overflow: auto;
+}
+.writing-sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  border-top: 1px solid var(--border);
+}
+.writing-mode {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+.writing-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+.writing-header {
+  min-height: 4rem;
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.writing-header > div {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+.writing-header strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.writing-message {
+  padding: 0.75rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--muted);
+}
+.writing-workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.writing-stagebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.writing-stage {
+  height: auto;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius);
+}
+.writing-stage small {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--muted-foreground);
+  margin-top: 0.15rem;
+}
+.writing-stage-number {
+  display: grid;
+  place-items: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  font-size: 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.writing-editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  flex: 1;
+}
+.writing-document {
+  padding: 2rem clamp(1.25rem, 4vw, 4rem);
+  min-width: 0;
+}
+.writing-document-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.writing-document h1,
+.writing-page h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.writing-prose {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Microsoft YaHei", serif;
+  white-space: pre-wrap;
+  line-height: 2.05;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+  max-width: 48rem;
+  min-height: 16rem;
+}
+.writing-markdown {
+  white-space: normal;
+}
+.writing-markdown p {
+  margin: 1rem 0;
+}
+.writing-markdown h1,
+.writing-markdown h2,
+.writing-markdown h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+}
+.writing-markdown blockquote {
+  border-left: 2px solid var(--border);
+  padding-left: 1rem;
+  color: var(--muted-foreground);
+}
+.writing-markdown ul,
+.writing-markdown ol {
+  padding-left: 1.5rem;
+  list-style: revert;
+}
+.writing-markdown pre {
+  white-space: pre-wrap;
+}
+.writing-controls {
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.writing-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+.writing-actions > span:first-child {
+  margin-right: auto;
+}
+.writing-inspector {
+  border-left: 1px solid var(--border);
+  padding: 1.25rem 1rem;
+  min-width: 0;
+}
+.writing-inspector h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.writing-inspector-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+}
+.writing-version {
+  width: 100%;
+  justify-content: space-between;
+  height: auto;
+  text-align: left;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.writing-version small {
+  font-size: 0.6rem;
+  color: var(--muted-foreground);
+}
+.writing-shell details {
+  border-top: 1px solid var(--border);
+  padding: 0.85rem 0;
+}
+.writing-shell summary {
+  cursor: pointer;
+  font-size: 0.75rem;
+  list-style-position: inside;
+}
+.writing-shell summary:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+.writing-shell details p {
+  margin-top: 0.75rem;
+}
+.writing-inspector details details {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+}
+.writing-input-record {
+  white-space: pre-wrap;
+  font-size: 0.65rem;
+  overflow-wrap: anywhere;
+  margin-top: 0.75rem;
+  color: var(--muted-foreground);
+}
+.writing-new summary {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.writing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+.writing-form label:not(:first-child) {
+  margin-top: 0.45rem;
+}
+.writing-form > button {
+  align-self: flex-start;
+  margin-top: 0.35rem;
+}
+.writing-empty {
+  min-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  text-align: center;
+  gap: 0.75rem;
+}
+.writing-empty h2 {
+  font-weight: 500;
+  color: var(--foreground);
+  font-size: 1rem;
+}
+.writing-empty p {
+  max-width: 27rem;
+  line-height: 1.8;
+}
+.writing-welcome {
+  flex: 1;
+  max-width: 40rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3rem;
+  padding: 3rem;
+  min-height: 70dvh;
+}
+.writing-welcome h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.writing-welcome p {
+  color: var(--muted-foreground);
+  line-height: 1.8;
+}
+.writing-welcome .writing-actions {
+  justify-content: flex-start;
+}
+.writing-page {
+  flex: 1;
+  padding: 2rem clamp(1rem, 4vw, 3.5rem);
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.writing-page-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.writing-library-counts {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--muted-foreground);
+}
+.writing-library-tools {
+  display: grid;
+  grid-template-columns: auto minmax(12rem, 1fr) auto minmax(8rem, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+.writing-reference > summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.writing-reference .writing-prose {
+  min-height: 0;
+  font-size: 0.875rem;
+}
+.writing-tags {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.writing-tags label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+}
+.writing-settings {
+  max-width: 48rem;
+}
+.writing-settings h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.writing-mode-options {
+  display: flex;
+  gap: 0.5rem;
+}
+.writing-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 2rem 0;
+}
+.writing-history {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr) 10rem;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.writing-history p {
+  overflow-wrap: anywhere;
+}
+.writing-history time {
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+}
+.writing-footer {
+  margin-top: auto;
+  min-height: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted-foreground);
+  font-size: 0.7rem;
+}
+.writing-footer > span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.writing-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: var(--foreground);
+}
+@media (max-width: 1100px) {
+  .writing-editor-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .writing-inspector {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+  .writing-library-tools {
+    grid-template-columns: auto 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .writing-shell {
+    grid-template-columns: 1fr;
+  }
+  .writing-sidebar {
+    height: auto;
+    position: static;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+    gap: 0.75rem;
+  }
+  .writing-sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .writing-nav {
+    width: auto;
+  }
+  .writing-chapters {
+    max-height: 10rem;
+  }
+  .writing-sidebar-bottom {
+    display: none;
+  }
+  .writing-header {
+    padding: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .writing-stagebar {
+    padding: 0.75rem;
+  }
+  .writing-document {
+    padding: 1.25rem;
+  }
+  .writing-history {
+    grid-template-columns: 5rem 1fr;
+  }
+  .writing-history time {
+    grid-column: 2;
+  }
+  .writing-library-counts {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .writing-library-tools {
+    grid-template-columns: 1fr;
+  }
+  .writing-reference > summary {
+    flex-direction: column;
+  }
+}

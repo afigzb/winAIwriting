@@ -3,6 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "writing:dev": "node scripts/writing.mjs dev",
+    "writing:build": "node scripts/writing.mjs build",
+    "writing:desktop": "node scripts/writing.mjs desktop",
+    "writing:package": "node scripts/writing.mjs package",
+    "writing:typecheck": "pnpm --filter @openwork/app exec tsc --noEmit -p tsconfig.writing.json",
+    "writing:test": "node --test apps/app/src/writing/model.test.ts apps/desktop/electron/writing-files.test.mjs",
     "sdk:generate": "pnpm --filter @openwork/sdk generate",
     "sdk:check": "pnpm --filter @openwork/sdk generate:check && pnpm --filter @openwork/sdk typecheck",
     "sdk:build": "pnpm --filter @openwork/sdk build",

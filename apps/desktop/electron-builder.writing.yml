@@ -1,0 +1,20 @@
+appId: io.winaiwriting.desktop
+productName: winAIwriting
+electronVersion: 43.7.7
+npmRebuild: false
+directories:
+  app: .
+  output: ../release
+files:
+  - "writing-*.mjs"
+  - "writing-preload.cjs"
+  - "ui/**/*"
+  - "package.json"
+  - "LICENSE"
+  - "!**/node_modules/**/*"
+asar: true
+win:
+  target:
+    - zip
+  signAndEditExecutable: false
+artifactName: winAIwriting-${version}-win-${arch}.${ext}

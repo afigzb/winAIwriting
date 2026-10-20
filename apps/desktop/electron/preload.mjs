@@ -1,6 +1,11 @@
 import { contextBridge, ipcRenderer, webFrame, webUtils } from "electron";
 import { installBrowserShortcutFocusTracking } from "./browser-shortcut-focus.mjs";
 
+contextBridge.exposeInMainWorld("winAIWriting", {
+  open: () => ipcRenderer.invoke("winai:project-open"),
+  save: (files, token) => ipcRenderer.invoke("winai:project-save", files, token),
+});
+
 const NATIVE_DEEP_LINK_EVENT = "openwork:deep-link-native";
 const NATIVE_MENU_OPEN_SETTINGS_EVENT = "openwork:native-menu:open-settings";
 const NATIVE_MENU_TOGGLE_SIDEBAR_EVENT = "openwork:native-menu:toggle-sidebar";
